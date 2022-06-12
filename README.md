@@ -12,13 +12,13 @@ Bu örnekler sayesinde direkt olarak yaralabilir hızlıca küçük çapta PIC �
 
 Bir buton kontrol edilerek işlemler yapılabilmesini sağlamaktadır.
 
-![a ](https://github.com/harunkurtme/pic_programming/tree/master/buton_ile_led_kontrol_uygulamasi/gif.gif)
+![image1](master/../buton_ile_led_kontrol_uygulamasi/gif.gif)
 
 ## Grafik LCD Uygulaması
 
 LCD üzerine yazı işlemleri ve özel fonksiyonlar ile semboller yazdırmanızı sağlamaktadır.
 
-![2](https://github.com/harunkurtme/pic_programming/tree/master/grafik_lcd_uygulamasi/gif.gif)
+![image2](master/../grafik_lcd_uygulamasi/gif.gif)
 
 
 ### NOT
