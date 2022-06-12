@@ -6,7 +6,15 @@ Bu örnekler sayesinde direkt olarak yaralabilir hızlıca küçük çapta PIC �
 
 # 
 
-## 
+# Örnekler
+
+## Buton ile LED Kontrol Uygulaması
+
+Bir buton kontrol edilerek işlemler yapılabilmesini sağlamaktadır.
+
+## Grafik LCD Uygulaması
+
+LCD üzerine yazı işlemleri ve özel fonksiyonlar ile semboller yazdırmanızı sağlamaktadır.
 
 
 ## NOT
