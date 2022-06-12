@@ -25,7 +25,8 @@ LCD üzerine yazı işlemleri ve özel fonksiyonlar ile semboller yazdırmanız�
 Buton ile binary sayici uygulamasi eklendi, butona basılması ile led ler den binary e denk gelen çıktısı
  verilmektedir.
 
-![]()
+![image3](master/../buton_ile_bcd_sayici_uygulmasi/gif.gif)
+
 ### NOT
 
 Dosyalar toplanarak hazırlanmıştır. örnekleştirme amacı taşımaktadır böylece hızlıca projeler geliştirme hedefini taşımaktadır.
