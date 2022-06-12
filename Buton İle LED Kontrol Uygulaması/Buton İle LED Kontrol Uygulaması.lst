@@ -1,0 +1,139 @@
+CCS PCM C Compiler, Version 4.068, 61971               30-Haz-13 21:54
+
+               Filename: C:\Users\emre\Desktop\3.Baský PROTEUS-ISIS_HEX-C Dosyalarý\Buton Ýle LED Kontrol Uygulamasý\Buton Ýle LED Kontrol Uygulamasý.lst
+
+               ROM used: 78 words (1%)
+                         Largest free fragment is 2048
+               RAM used: 8 (2%) at main() level
+                         8 (2%) worst case
+               Stack:    0 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... /****************************************************** 
+....................  Uygulama Adý     : Buton ile Led Kontrol Uygulamasý 
+....................  Programýn Amacý  : Bu program ile B0 portuna baðlý LED, RA0 giriþine baðlý buton ile kontrol edilmektedir. 
+....................  PIC PROG/DEKA    : Port B jumper'ý LED konumunda olmalý 
+....................  Yazan            : SERDAR ÇÝÇEK 
+.................... *******************************************************/ 
+....................  
+.................... #include <16f877.h>     // Kullanýlacak denetleyicinin baþlýk dosyasý tanýtýlýyor. 
+.................... //////// Standard Header file for the PIC16F877 device //////////////// 
+.................... #device PIC16F877 
+.................... #list 
+....................  
+.................... #fuses XT,NOWDT,NOPROTECT,NOBROWNOUT,NOLVP,NOPUT,NOWRT,NODEBUG,NOCPD // Denetleyici konfigürasyon ayarlarý 
+....................  
+.................... #use fast_io(a) // Port yönlendirme komutlarý A portu için geçerli 
+.................... #use fast_io(b) // Port yönlendirme komutlarý B portu için geçerli 
+....................  
+.................... int1 x; // 1 bitlik x adýnda tamsayý tipinde bir deðiþken tanýmlanýyor. 
+....................  
+.................... /********* ANA PROGRAM FONKSÝYONU********/ 
+....................  
+.................... void main () 
+.................... { 
+*
+0004:  CLRF   04
+0005:  BCF    03.7
+0006:  MOVLW  1F
+0007:  ANDWF  03,F
+0008:  BSF    03.5
+0009:  BSF    1F.0
+000A:  BSF    1F.1
+000B:  BSF    1F.2
+000C:  BCF    1F.3
+....................    setup_psp(PSP_DISABLED);        // PSP birimi devre dýþý 
+*
+0010:  BSF    03.5
+0011:  BCF    09.4
+....................    setup_spi(SPI_SS_DISABLED);     // SPI birimi devre dýþý 
+0012:  BCF    03.5
+0013:  BCF    14.5
+0014:  BCF    21.5
+0015:  MOVF   21,W
+0016:  BSF    03.5
+0017:  MOVWF  07
+0018:  BCF    03.5
+0019:  BSF    21.4
+001A:  MOVF   21,W
+001B:  BSF    03.5
+001C:  MOVWF  07
+001D:  BCF    03.5
+001E:  BCF    21.3
+001F:  MOVF   21,W
+0020:  BSF    03.5
+0021:  MOVWF  07
+0022:  MOVLW  01
+0023:  BCF    03.5
+0024:  MOVWF  14
+0025:  MOVLW  00
+0026:  BSF    03.5
+0027:  MOVWF  14
+....................    setup_timer_1(T1_DISABLED);     // T1 zamanlayýcýsý devre dýþý 
+0028:  BCF    03.5
+0029:  CLRF   10
+....................    setup_timer_2(T2_DISABLED,0,1); // T2 zamanlayýcýsý devre dýþý 
+002A:  MOVWF  78
+002B:  MOVWF  12
+002C:  MOVLW  00
+002D:  BSF    03.5
+002E:  MOVWF  12
+....................    setup_adc_ports(NO_ANALOGS);    // ANALOG giriþ yok 
+002F:  BSF    1F.0
+0030:  BSF    1F.1
+0031:  BSF    1F.2
+0032:  BCF    1F.3
+....................    setup_adc(ADC_OFF);             // ADC birimi devre dýþý 
+0033:  BCF    03.5
+0034:  BCF    1F.0
+....................    setup_CCP1(CCP_OFF);            // CCP1 birimi devre dýþý 
+0035:  BSF    21.2
+0036:  MOVF   21,W
+0037:  BSF    03.5
+0038:  MOVWF  07
+0039:  BCF    03.5
+003A:  CLRF   17
+....................    setup_CCP2(CCP_OFF);            // CCP2 birimi devre dýþý 
+003B:  BSF    21.1
+003C:  MOVF   21,W
+003D:  BSF    03.5
+003E:  MOVWF  07
+003F:  BCF    03.5
+0040:  CLRF   1D
+....................  
+....................    set_tris_a(0b00000001);    // RA0 ucu giriþ olarak ayarlandý. 
+0041:  MOVLW  01
+0042:  BSF    03.5
+0043:  MOVWF  05
+....................    set_tris_b(0x00);    // RB0 portu tümüyle çýkýþ olarak ayarlandý. 
+0044:  MOVLW  00
+0045:  MOVWF  06
+....................     
+....................    while(1) 
+....................    { 
+....................    if (input(pin_a0)) 
+0046:  BCF    03.5
+0047:  BTFSS  05.0
+0048:  GOTO   04B
+....................    { 
+....................      output_high(pin_b0); 
+0049:  BSF    06.0
+....................    } 
+....................    else 
+004A:  GOTO   04C
+....................    { 
+....................      output_low(pin_b0); 
+004B:  BCF    06.0
+....................    } 
+....................    } 
+004C:  GOTO   047
+.................... } 
+....................  
+004D:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F39   XT NOWDT NOPUT NOPROTECT NOBROWNOUT NOLVP NOCPD NOWRT NODEBUG

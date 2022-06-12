@@ -1,0 +1,4 @@
+>>> Warning 203 "Buton Ýle LED Kontrol Uygulamasý.c" Line 33(1,1): Condition always TRUE
+>>> Warning 202 "Buton Ýle LED Kontrol Uygulamasý.c" Line 14(6,7): Variable never used:   x
+      Memory usage:   ROM=1%      RAM=2% - 2%
+      0 Errors,  2 Warnings.
