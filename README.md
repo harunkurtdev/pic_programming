@@ -1,4 +1,4 @@
-# Hoşgeldiniz!
+
 
 Bu github reposu C programlama dili ile PIC programalama örnekleri barındırmaktadır.
 Bu örnekler sayesinde direkt olarak yaralabilir hızlıca küçük çapta PIC çalışmaları yapabilirsinizz...
